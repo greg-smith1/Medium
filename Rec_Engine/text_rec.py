@@ -26,7 +26,7 @@ class RecommendationSystem(object):
     def generate_similarity(self, matrix):
         df = self.data
         with open('similar_text_matrix.csv', 'w+') as similarity_matrix:
-            similarity_matrix.write('self_id,id1,id2,id3,id4,id5,id6,id7,id8\n')
+            similarity_matrix.write('self_id,id1,id2,id3\n')
             for index, row in df.iterrows():
                 similar_indices = matrix[index].argsort()[:-4:-1]
                 similar_items = [(matrix[index][i], df['item_id'][i]) for i in similar_indices]
