@@ -34,7 +34,6 @@ class RecommendationSystem(object):
                 # Unpack the new_items into the item names we're writing to csv
                 # In this basic version we're not keeping the actual values
                 self_score, self_id, score1, id1, score2, id2, score3, id3 = new_items
-                #item_name = df[(df['item_id'] == self_id)][:1]['item_name'].item()
                 new_line = "{0},{1},{2},{3}".format(self_id,id1,id2,id3)
                 similarity_matrix.write('{}\n'.format(new_line))
 
