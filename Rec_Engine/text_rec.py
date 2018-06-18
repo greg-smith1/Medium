@@ -28,7 +28,7 @@ class RecommendationSystem(object):
         with open('similar_text_matrix.csv', 'w+') as similarity_matrix:
             similarity_matrix.write('self_id,id1,id2,id3\n')
             for index, row in df.iterrows():
-                similar_indices = matrix[index].argsort()[:-4:-1]
+                similar_indices = matrix[index].argsort()[:-5:-1]
                 similar_items = [(matrix[index][i], df['item_id'][i]) for i in similar_indices]
                 new_items = sum(similar_items[:], ())
                 # Unpack the new_items into the item names we're writing to csv
